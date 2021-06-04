@@ -5,17 +5,20 @@ $(document).ready(function() {
 
     if (age) {
       let quote = (100 - age) * 3;
-      if (gender === 'male' && age < 26) {
+      if (gender === 'male' || age < 26) {
         quote += 50;
       }
 
       $("#rate").text(quote);
       $("#quote").show();
-    } else {
+    } 
+    if (age <18) {
+      alert('Have your parents drive you.');
+    }
+    else {
       alert('Please enter your age.');
     }
-
-
+  
     event.preventDefault();
   });
 });
